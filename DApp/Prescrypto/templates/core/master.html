@@ -1,0 +1,39 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static "img/icon.png" %}">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a style="margin-left: 0.5rem; margin-right: 0rem; margin-top: auto; margin-bottom: auto;">
+                <img style="height: 3rem; padding: 0; margin: 0;" src="{% static "img/icon.png" %}" alt="Prescrypto logo">
+            </a>
+            <a style="margin-left: 0; font-weight: 800;" href={% url "home" %}>Prescrypto</a></li>
+            {% if auth == False %}
+            <a class="login" href={% url "login" %}>Iniciar sesion</a>
+            {% endif %}
+            {% if auth == True %}
+                <a href={% url "home" %}>Inicio</a></li>
+                <a href={% url "recetas" %}>Recetas</a></li>
+                <a href={% url "account" %}>Account</a>
+                <a class="logout" href={% url "logout" %} >Cerrar sesion</a>
+            {% endif %}
+        </nav>
+        {% block header %}{% endblock header %}
+    </header>
+    <main>
+        {{home_data}}
+        {% block content %}{% endblock content %}
+    </main> 
+    <footer>
+        {% block footer %}
+            {% include "core/footer.html"%}
+        {% endblock footer %}
+    </footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends "core/master.html" %}
+{% block title %}Logout{% endblock title %}
+{% block content %}
+<section style="height: 60vh">
+    <div style="padding: 4rem;" class="transparent_card">
+    {% if auth == True %}
+        <div>
+            <h1 style="text-align: center;">¿Deseas cerrar sesión?</h1>
+        </div>
+        <form action="{{last}}" method="post">
+            {% csrf_token %}
+            <div style="display: flex;">
+                <button id="YES" class="glow btn" type="submit" value="ok" name="Si">Si</button>
+                <button id="NO" class="glow btn" type="submit" value="cancel" name="No">No</button>
+            </div>
+        </form>
+    {% else %}
+        <h1>Aun no has iniciado sesion</h1>
+        <a style="width:100%; text-align:center" class="btn glow" href={% url "home" %}>Volver</a>
+    {% endif %}
+    </div>
+
+</section>
+{% endblock content %}

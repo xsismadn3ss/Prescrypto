@@ -1,0 +1,78 @@
+{% extends "core/master.html" %}
+
+{% block title %}Home{% endblock title%}
+
+{% block content %}
+<div style="margin-bottom: 35vh;">
+    <section style="margin-bottom: 0; margin-top: 15vh; margin-bottom: 10vh;">
+        <h1 style="font-family: 'Tiny5', sans-serif; font-weight: 400; font-style: normal; font-size: 80;">Prescrypto
+        </h1>
+        <h2 class="sub_tittle" style="text-decoration:underline;">Tus prescripciones en un solo lugar</h2>
+        <img style="height: 20vh;" src="static/img/icon.png" alt="prescrypto logo">
+    </section>
+
+    <section>
+        <div style="display: flex;">
+            <img class="animate_to_right" style="height: 16rem;" src="static/img/homepic_8.png" alt="prescrypto logo">
+            <div class="transparent_card animate_scroll"
+                style="max-width: 50ch; box-shadow: -10px 10px 20px 0px black;">
+                <h2 class="animate_color">¿QUE ES PRESCRYPTO?</h2>
+                <p>
+                    Prescrypto es la app donde puedes almacenar, consultar, y compartir tus prescripciones en un solo
+                    lugar.
+                </p>
+                <p>
+                    Prescrypto tiene como objetivo agilizar el proceso de crear recetas a pacientes con el fin de
+                    evitar el papeleo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div style="display: flex;">
+            <div class="transparent_card animate_scroll"
+                style="max-width: 50ch; box-shadow: -10px 10px 20px 0px black;">
+                <h2 class="animate_color" style="text-align: right;">¿COMO FUNCIONA PRESCRYPTO?</h2>
+                <p>Prescrypto almacena todas las prescirpciones en la red ethereum, gracias a la tecnología
+                    blockchain.
+                    No se necesita utilizar una base de datos para almacenar las prescripciones.</p>
+                <p>Prescrypto hace uso de un smart contract para gestionar la creación, edición y busqueda de
+                    prescripciones. La tecnología blockchain impide el fraude y elimina vulnerabilidades comunes que
+                    pueda tener una base de datos ordinaria.</p>
+            </div>
+            <img class="animate_to_left" style="height: 16rem;" src="static\img\homepic_contract.png"
+                alt="smart contract">
+        </div>
+    </section>
+    <section>
+        <div style="display: flex;">
+            <img class="animate_to_right" style="height: 16rem;" src="static/img/data.png"
+                alt="registro de prescirpciones">
+
+            <div class="transparent_card animate_scroll" style=" max-width: 50ch;">
+                <h2 class="animate_color" style="text-align: left;">APOYAMOS LA TRANSPARENCIA</h2>
+                <p>Todas las prescripciones almacenadas en la red blockchain son publicas, cualquier usuario puede
+                    consultar información de las prescripciones sobre otro paciente o médico.
+                </p>
+                <p>
+                    Esto garantiza que no exista ningún tipo de fraude dentro de la aplicación.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div style="display: flex;">
+            <div class="transparent_card animate_scroll"
+                style="max-width: 50ch; box-shadow: -10px 10px 20px 0px black; text-align: justify;">
+                <h2 class="animate_color" style="text-align: right;">CONTENIDO ORIENTADO AL USUARIO</h2>
+                <p>En este sitio web encontraras tus prescripciones ordenadas por el nombre de los medicos con los
+                    que
+                    hayas pasado consulta. Esto te premitira encontrar más rapido lo que necesites.</p>
+            </div>
+            <img class="animate_to_left" style="height: 16rem;" src="static/img/homepic_medic.png"
+                alt="prescripciones ordenas por medico">
+        </div>
+    </section>
+</div>
+{% endblock content %}

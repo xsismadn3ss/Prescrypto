@@ -1,0 +1,26 @@
+{% extends "core/master.html" %}
+{% block title %}Cuenta{% endblock title %}
+{% block content %}
+<section style="height:60vh">
+    <div style="box-shadow: 30px 30px 20px 0px black;" class="transparent_card">
+        
+    {% if auth == False %}
+        <h2>Aun no has iniciadio sesión</h2>
+        <p>Por favor inicia sesión para ver los detalles de tu cuenta</p>
+    {% else %}
+    <div style="display: flex;">
+        <img style="height: 10rem; background: #a4ffdf5d; padding: 1rem; border-radius: 50px; box-shadow: 0px 0px 10px 0px black;" src="/static/img/user.png" alt="icono usuario">
+        <div style="color: #a4ffdf">
+            <h2>{{ user.firstname }} {{ user.lastname }}</h2>
+            <p><strong>Edad</strong> {{ user.age }}</p>
+            <p> <strong>Dui:</strong>  {{ user.dui }}</p>
+            <p><strong>Wallet:</strong>  {{ user.wallet }}</p>
+            <p><strong>Username:</strong>  {{ user.username }}</p>
+        </div>
+    </div>
+    <button class="btn glow">Editar perfil</button>
+    {% endif %}
+    </div>
+    
+</section>
+{% endblock content %}

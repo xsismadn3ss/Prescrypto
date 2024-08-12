@@ -1,0 +1,61 @@
+{% extends "core/master.html" %}
+{% block tittle %}Crear cuenta{% endblock tittle %}
+{% block content %}
+<section>
+    <div style="text-align: left; max-width: 60ch;" class="transparent_card">
+        <div>
+            <h1 style="font-size: 40;">Registrarse</h1>
+        </div>
+        <form style="margin-top: 1rem;" action="" method="post">
+            {% csrf_token %}
+            <div style="display: grid; grid-template-columns: 50% 50%;">
+                <div>
+                    <label for="name">Nombre:</label>
+                    <input type="text", name="name" required placeholder="ingresa tus nombres" value={{ name }}>                   
+                </div>
+                <div>
+                    <label for="lastname">Apellido:</label>
+                    <input type="text" name="lastname" required placeholder="ingresa tus apellidos" value={{ lastname }}>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 50% 50%;">
+                <div>
+                    <label for="dui">DUI:</label>
+                    <input type="number" name="dui" placeholder="00000000" value={{ dui }}>
+                </div>
+                <div>
+                    <label for="age">Edad:</label>
+                    <input type="text" name="age" required placeholder="Inreduce tu edad" value={{ age }}>
+                </div>
+            </div>
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" name="username" required placeholder="crea un nombre de usuario" value={{ username }} >
+            </div>
+
+            <div style="display: grid; grid-template-columns: 50% 50%;">
+                <div>
+                    <label for="wallet">Wallet:</label>
+                    <input type="text" name="wallet" required placeholder="id de wallet ehtereum" value={{ wallet }}>
+
+                </div>
+                <div>
+                    <label for="pk">Private key:</label>
+                    <input type="text" name="pk" required placeholder="pega tu clave privada" value={{ pk }}>
+                </div>
+            </div>
+            <div>
+                <label for="password">Contraseña:</label>
+                <input type="password" name="password" placeholder="crea una contraseña para proteger tu clave privada" value={{ password }}>
+                <label for="password_c">Confirmar contraseña:</label>
+                <input type="password" name="password_c" placeholder="confirma tu contraseña" value={{ password_c }}>
+            </div>
+            <p style="color: rgb(255, 77, 77); margin: 0; padding: 0;">
+                {{ data }}
+            </p>
+            <button class="btn glow" type="submit">Crear cuenta</button>
+        </form>
+    </div>
+</section>
+{% endblock content %}
